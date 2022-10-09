@@ -1,0 +1,13 @@
+.section {
+    padding: 3rem 4rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 800px) {
+    .section {
+        padding: 1rem;
+    }
+}
+

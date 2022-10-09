@@ -1,0 +1,51 @@
+.content {
+    font-size: 1rem;
+    line-height: 1.4;
+
+    p,
+    figure,
+    blockquote,
+    ul,
+    ol {
+        margin-bottom: 1.5em;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    figure {
+        margin-bottom: 1em;
+    }
+
+    ul {
+        margin-left: 1em;
+
+        li::before {
+            position: absolute;
+            left: 0;
+            content: '•';
+        }
+
+        li {
+            padding-left: 1em;
+            position: relative;
+            margin-bottom: 0.5em;
+        }
+    }
+
+    ol {
+        margin-left: 2em;
+        list-style: decimal;
+
+        li {
+            margin-bottom: 0.5em;
+        }
+    }
+
+    blockquote {
+        margin-left: 1em;
+        border-left: #FFDE7D solid 4px;
+        padding-left: 1em;
+    }
+}

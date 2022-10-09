@@ -1,0 +1,26 @@
+.article {
+    position: relative;
+    padding: 3rem 4rem 3rem 6rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    &Back {
+        position: absolute;
+        left: 3rem;
+        font-size: 2rem;
+        top: 4rem;
+        color: black;
+        text-decoration: none;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .article {
+        padding: 1rem;
+
+        &Back {
+            position: static;
+        }
+    }
+}

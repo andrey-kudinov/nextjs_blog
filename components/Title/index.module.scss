@@ -1,0 +1,53 @@
+.title {
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0.5em;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        left: 0;
+        height: 0.5em;
+        background: #FFDE7D;
+        z-index: -1;
+        bottom: 0;
+        transition: width 0.3s;
+    }
+
+    &Small {
+        font-size: 2rem;
+        line-height: 1.2;
+
+        &::after {
+            width: 0;
+        }
+    }
+
+    &Medium {
+        font-size: 3.5rem;
+        line-height: 1.2;
+        margin-bottom: 1em;
+
+        &::after {
+            width: calc(100% + 2rem);
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .title {
+        &Small {
+            font-size: 1.5rem;
+        }
+
+        &Medium {
+            font-size: 2.5rem;
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+.screenEgg {
+    position: fixed;
+    background: #FFDE7D;
+    display: inline-block;
+    padding: 1rem;
+    z-index: 99;
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    
+    &Right {
+        padding-left: 2rem;
+        transform: translate(calc(100% - 1.9rem), 0);
+        top: 10%;
+        right: 0;
+        transition: transform 0.5s ease-out;
+    }
+
+    &Left {
+        padding-right: 1.9rem;
+        transform: translate(calc(-100% + 1.9rem), 0);
+        bottom: 10%;
+        left: 0;
+        transition: transform 0.3s ease-out;
+    }
+
+    &:hover {
+        transform: translate(0, 0);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .screenEgg {
+        padding: 1rem;
+        position: static;
+        display: block;
+
+        &Right,
+        &Left {
+            transition: none;
+            transform: none
+        }
+
+        ul {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+
+            li {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,23 @@
+.buyCoffee {
+    padding-top: 6.5rem;
+    display: block;
+    background: url('/buy_coffee.png') no-repeat top center;
+    background-size: auto 5rem;
+
+    &Button {
+        background: #00B8A9;
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 1em 2rem;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: block;
+
+        &:hover {
+            background: white;
+            color: black;
+        }
+    }
+}
