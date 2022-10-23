@@ -7,20 +7,20 @@ import { Title } from '../Title'
 
 export const Post = ({ className, image, title, description, slug }) => (
   <Link href={`/post/${encodeURIComponent(slug.current)}`} class={cl(className, styles.post)}>
-    <a className={styles.postLink}>
-      <Title type='small' className={styles.postTitle}>
+    <a className={styles.link}>
+      <Title type='small' className={styles.title}>
         {title}
       </Title>
-      <div className={styles.postContent}>
+      <div className={styles.content}>
         <div>
           <Image
-            scr={urlFor(image).url()}
+            src={urlFor(image).url()}
             alt={image.caption}
             width="100px"
             height="100px"
           />
         </div>
-        <div className={styles.postDescription}>{description}</div>
+        <div className={styles.description}>{description}</div>
       </div>
     </a>
   </Link>

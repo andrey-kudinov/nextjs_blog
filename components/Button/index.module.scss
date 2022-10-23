@@ -1,18 +1,18 @@
 .button {
-    background: #FFDE7D;
-    padding: 0.5em 2em;
-    font-size: 1.5rem;
-    font-weight: bold;
-    transition: all 0.3s;
-    cursor: pointer;
-    color: black;
+  background: #ffde7d;
+  padding: 0.5em 2em;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: all 0.3s;
+  cursor: pointer;
+  color: black;
 
-    &:hover {
-        background: #00B8A9;
-        color: #ffffff;
-    }
+  &:hover {
+    background: #00b8a9;
+    color: #ffffff;
+  }
 
-    &:disabled {
-        opacity: 0.5;
-    }
+  &:disabled {
+    opacity: 0.5;
+  }
 }

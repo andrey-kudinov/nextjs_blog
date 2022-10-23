@@ -1,17 +1,15 @@
-.list {
-    &Item {
-        margin-bottom: 0.5em;
+.item {
+  margin-bottom: 0.5em;
 
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
 
-    &Link {
-        transition: opacity 0.3s;
+.link {
+  transition: opacity 0.3s;
 
-        &:hover {
-            opacity: 0.6;
-        }
-    }
+  &:hover {
+    opacity: 0.6;
+  }
 }

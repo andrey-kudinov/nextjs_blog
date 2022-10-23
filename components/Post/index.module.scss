@@ -1,39 +1,35 @@
-.post {
-    &Title {
-        margin-bottom: 0.7em;
-    }
+.title {
+  margin-bottom: 0.7em;
+}
 
-    &Description {
-        line-height: 1.6;
-    }
+.description {
+  line-height: 1.6;
+}
 
-    &Content {
-        display: grid;
-        grid-template-columns: 6rem 1fr;
-        align-items: start;
-        gap: 1.5rem;
-    }
+.content {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  align-items: start;
+  gap: 1.5rem;
+}
 
-    &Link {
-        text-decoration: none;
-        color: black;
+.link {
+  text-decoration: none;
+  color: black;
 
-        &:hover {
-            .postTitle::after {
-                width: 100%;
-            }
-        }
+  &:hover {
+    .postTitle::after {
+      width: 100%;
     }
+  }
 }
 
 @media only screen and (max-width: 800px) {
-    .post {
-        &Image {
-            display: none;
-        }
+  .image {
+    display: none;
+  }
 
-        &Content {
-            grid-template-columns: 1fr;
-        }
-    }
+  .content {
+    grid-template-columns: 1fr;
+  }
 }

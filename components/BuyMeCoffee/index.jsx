@@ -5,7 +5,12 @@ import { ScreenEgg } from '../../components'
 export const BuyMeCoffee = ({ className }) => (
   <ScreenEgg type='right'>
     <div className={cl(className, styles.buyCoffee)}>
-      <a href='#' target='_black' rel='noreferrer noopener' className={styles.buyCoffeeButton}>
+      <a
+        href='#'
+        target='_black'
+        rel='noreferrer noopener'
+        className={styles.button}
+      >
         Buy me a coffee
       </a>
     </div>
