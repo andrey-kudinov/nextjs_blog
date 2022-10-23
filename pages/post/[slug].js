@@ -5,7 +5,6 @@ import { format } from 'date-fns'
 import Head from 'next/head'
 
 const Post = ({ post }) => {
-  console.log({ post }, post.publishDate)
   const date = format(new Date(post.publishDate), 'dd MMM yyyy')
   return (
     <>
