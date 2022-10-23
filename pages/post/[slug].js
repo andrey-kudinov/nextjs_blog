@@ -2,16 +2,22 @@ import { Article, Content, Title } from '../../components'
 import { client } from '../../lib/client'
 import styles from './styles.module.scss'
 import { format } from 'date-fns'
+import Head from 'next/head'
 
 const Post = ({ post }) => {
   console.log({ post }, post.publishDate)
   const date = format(new Date(post.publishDate), 'dd MMM yyyy')
   return (
-    <Article backUrl='/' className={styles.post}>
-      <Title className={styles.title}>{post.title}</Title>
-      <p className={styles.date}>{date}</p>
-      <Content body={post.body} />
-    </Article>
+    <>
+      <Head>
+        <title>{post.meta_title}</title>
+      </Head>
+      <Article backUrl='/' className={styles.post}>
+        <Title className={styles.title}>{post.title}</Title>
+        <p className={styles.date}>{date}</p>
+        <Content body={post.body} />
+      </Article>
+    </>
   )
 }
 
