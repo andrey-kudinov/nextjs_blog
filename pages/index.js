@@ -1,13 +1,32 @@
 import Head from 'next/head'
-import { BuyMeCoffee, Cover, Post, PostGrid, Section, SocialNetworks, Title } from '../components'
+import { Button, BuyMeCoffee, Cover, Post, PostGrid, Section, SocialNetworks, Title } from '../components'
 import { loadPosts } from './api/posts'
 import { useState } from 'react'
 
-const LOAD_MORE_STEP = 2
+const LOAD_MORE_STEP = 1
 
 export default function Home({ initialPosts, total }) {
-  console.log({ initialPosts })
   const [posts, setPosts] = useState(initialPosts)
+  const [loadedAmount, setLoadedAmount] = useState(LOAD_MORE_STEP)
+  const [loading, setLoading] = useState(false)
+
+  const isLoadButton = total > loadedAmount
+
+  const getMorePosts = async () => {
+    setLoading(true)
+
+    try {
+      const response = await fetch(`/api/posts?start=${loadedAmount}&end=${loadedAmount + LOAD_MORE_STEP}`)
+      const data = await response.json()
+      setLoadedAmount(loadedAmount + LOAD_MORE_STEP)
+      setPosts([...posts, ...data.posts])
+    } catch (error) {
+      console.error(error)
+    }
+
+    setLoading(false)
+  }
+
   return (
     <>
       <Head>
@@ -25,10 +44,17 @@ export default function Home({ initialPosts, total }) {
       <Section>
         <Title>New Post</Title>
         <PostGrid>
-          {posts.map(post => (
-            <Post key={post.slug.current} {...post} />
+          {posts.map((post, index) => (
+            <Post key={index} {...post} />
           ))}
         </PostGrid>
+        {isLoadButton && (
+          <div style={{ display: 'flex', placeItems: 'center' }}>
+            <Button onClick={getMorePosts} disabled={loading}>
+              Load more posts...
+            </Button>
+          </div>
+        )}
       </Section>
     </>
   )
