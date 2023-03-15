@@ -6,22 +6,25 @@ import { urlFor } from '../../lib/client'
 import { Title } from '../Title'
 
 export const Post = ({ className, image, title, description, slug }) => (
-  <Link href={`/post/${encodeURIComponent(slug.current)}`} class={cl(className, styles.post)}>
-    <a className={styles.link}>
-      <Title type='small' className={styles.title}>
-        {title}
-      </Title>
-      <div className={styles.content}>
-        <div>
-          <Image
-            src={urlFor(image).url()}
-            alt={image.caption}
-            width="100px"
-            height="100px"
-          />
-        </div>
-        <div className={styles.description}>{description}</div>
+  (<Link
+    href={`/post/${encodeURIComponent(slug.current)}`}
+    class={cl(className, styles.post)}
+    className={styles.link}>
+
+    <Title type='small' className={styles.title}>
+      {title}
+    </Title>
+    <div className={styles.content}>
+      <div>
+        <Image
+          src={urlFor(image).url()}
+          alt={image.caption}
+          width="100px"
+          height="100px"
+        />
       </div>
-    </a>
-  </Link>
+      <div className={styles.description}>{description}</div>
+    </div>
+
+  </Link>)
 )
